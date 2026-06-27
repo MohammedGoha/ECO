@@ -1,0 +1,780 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* in small screen  */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* in medium screen  */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* in larges screens */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* start header screen */
+header {
+  width: 100%;
+  padding: 30px 30px;
+  background: #000;
+  border-bottom: #fff solid 5px;
+}
+
+.logo {
+  display: inline;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+header .container ul {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  flex-basis: auto;
+}
+
+header .container .left {
+  display: flex;
+  flex-basis: auto;
+}
+
+header .container img {
+  position: relative;
+  left: -45px;
+  padding-left: 15px;
+}
+
+header .container ul li a {
+  color: #fff7cb;
+  padding: 0 15px;
+  font-size: 20px;
+}
+
+header .container ul li a:hover {
+  color: white;
+}
+
+header .container ul li .active {
+  color: white;
+}
+
+header .container .right {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  flex: 0.4;
+  align-items: center;
+}
+
+header .container .right a {
+  color: gold;
+}
+
+menu {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  header {
+    height: 114px;
+    border: 0;
+  }
+
+  header .container .right {
+    display: none;
+  }
+
+  header .container .left ul {
+    position: absolute;
+    top: 150px;
+    width: 100%;
+    left: 0;
+    background: black;
+    flex-direction: column;
+    z-index: -1;
+    transition: 0.3s;
+  }
+
+  header .container .left ul:hover {
+    top: 114px;
+    z-index: 1;
+  }
+
+  menu:hover + .left ul {
+    display: block;
+    z-index: 1;
+    top: 114px;
+  }
+
+  header .container .left ul li {
+    width: 100%;
+    border-bottom: 1px solid #394c5d;
+    text-align: center;
+  }
+
+  header .container .left ul li:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  header .container .left ul li a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  header .container menu {
+    display: block;
+    position: absolute;
+    right: 0;
+  }
+
+  header .container .left .logo {
+    display: block;
+  }
+}
+
+/* end header  */
+.landing {
+  background-image: url(../images/photo.jpg);
+  height: calc(100vh - 114px);
+  padding: 100px 0;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.landing .container {
+  overflow-x: hidden;
+  overflow-y: clip;
+}
+
+.landing .container .txt h1 {
+  color: white;
+  font-size: 65px;
+  padding-bottom: 50px;
+  margin-bottom: 0;
+}
+
+.landing .container .txt h1 span {
+  color: gold;
+  display: block;
+}
+
+.landing .container .txt {
+  max-width: 70%;
+  animation: left-right 15s infinite;
+  animation-delay: 1s;
+  transition: 0.5s;
+  position: relative;
+}
+
+.landing .container .txt p {
+  color: white;
+  line-height: 1.8;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.landing .container .button {
+  margin-top: 40px;
+  margin-left: 50px;
+  display: flex;
+}
+
+.landing .container .button a {
+  color: white;
+  background-color: blue;
+  border-radius: 50px;
+  margin-left: 30px;
+  font-size: 20px;
+  transition: 0.5s;
+  display: block;
+  width: 48px;
+  height: 40px;
+  text-align: center;
+  flex-basis: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing .container .button a:hover {
+  color: black;
+  background-color: gold;
+}
+
+@keyframes left-right {
+  0% {
+    left: 0;
+  }
+
+  5% {
+    left: 102%;
+    left: -100%;
+  }
+
+  10% {
+    left: -100%;
+  }
+
+  15% {
+    left: 0;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+/* start serviser  */
+.services {
+  padding: 100px 0;
+}
+
+.services .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.services .container .theheader {
+}
+
+.services .container .theheader .hh img {
+  height: 45px;
+  margin-top: 20px;
+  padding-right: 10px;
+}
+
+.services .container .theheader .hh {
+  display: flex;
+}
+
+.services .container .theheader h1.the {
+  color: gold;
+}
+
+.services .container .theheader h1:not(.the) {
+  padding-left: 39px;
+  margin: 0;
+}
+
+.services .container .theheader p {
+  color: #2e2f2f;
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: 400;
+  padding-top: 20px;
+  padding-left: 36px;
+}
+
+.services .container .box {
+  padding-top: 30px;
+  display: flex;
+}
+
+.services .container .box p {
+  line-height: 2;
+  margin-top: 25px;
+}
+
+.services .container .box img {
+  height: 120px;
+}
+
+.services .container button {
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  border: none;
+
+  background: none;
+}
+
+.services .container button a {
+  color: #f9bf16;
+  border: 3px solid #f9bf16;
+  display: block;
+  padding: 15px 10px;
+  border-radius: 50px;
+  width: 120px;
+  transition: 0.3s;
+}
+
+.services .container button a:hover {
+  background-color: blue;
+  color: white;
+}
+
+/* end serviser  */
+/* start about */
+.container .head {
+  display: flex;
+  gap: 10px;
+  height: 45px;
+  align-items: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+}
+
+.container .head span {
+  color: #f9bf16;
+}
+
+.head + p {
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+}
+
+.about .head {
+  color: black;
+}
+
+.about .container .txt p {
+  color: #2e2f2f;
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: 400;
+  padding-top: 20px;
+  padding-left: 36px;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* end about  */
+/* start resent  */
+.resent {
+  padding: 100px 0;
+  background-color: #f9bf16;
+}
+
+.resent .container .boxs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
+  gap: 50px;
+  margin-top: 50px;
+  align-content: center;
+  justify-content: center;
+}
+
+.resent .container .boxs .box h1 {
+  margin: 10px;
+}
+
+.resent .head {
+  color: white;
+}
+
+.resent .container .boxs .box {
+  text-align: center;
+  position: relative;
+  color: white;
+}
+
+.resent .container .boxs .box::before {
+  content: "";
+  width: 120%;
+  position: absolute;
+  height: 45px;
+  background: blue;
+  left: 50%;
+  top: -15px;
+  transform: translateX(-50%);
+}
+
+.resent .container {
+  text-align: center;
+}
+
+.resent .container .boxs .middle::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  top: 75%;
+}
+
+@media (min-width: 1200px) {
+  .resent .container .boxs .middle {
+    transform: translateY(-30px);
+    position: relative;
+  }
+}
+
+.resent .container .boxs .box img {
+  z-index: 1;
+  position: relative;
+}
+
+.resent .container button {
+  border: 0;
+  position: relative;
+  background: none;
+}
+
+.resent .container button a {
+  padding: 15px;
+  margin-top: 30px;
+  display: block;
+  color: white;
+  background-color: #f9bf16;
+  border: 1px solid;
+  border-radius: 50px;
+  width: 150px;
+  transition: 0.3s;
+}
+
+.resent .container button a:hover {
+  background-color: white;
+  color: #f9bf16;
+  border-color: gold;
+}
+
+/* end resent  */
+/* start testmonalis */
+.test {
+  padding: 100px 0;
+}
+
+.test .container {
+  overflow: hidden;
+}
+
+.test .container .boxs {
+  display: flex;
+}
+
+.test .container .box {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin-top: 50px;
+  width: 100%;
+  min-width: 100%;
+  position: relative;
+  left: 0;
+  animation: the_thing 20s infinite;
+}
+
+.test .container .box img {
+  width: 195px;
+}
+
+.test .container .box p {
+  line-height: 2;
+  font-size: 20px;
+  max-width: 100%;
+}
+
+.test .container .three {
+  position: relative;
+  height: 50px;
+  width: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1px;
+  margin-top: 50px;
+}
+
+.test .container .three span {
+  background: black;
+  display: block;
+  width: 40px;
+  height: 10px;
+  border-radius: 50px;
+}
+
+.test .container .three span.t {
+  position: absolute;
+  left: 0px;
+  z-index: 1;
+  background: #f9bf16;
+  animation: thing 20s infinite;
+}
+
+@keyframes the_thing {
+  0% {
+    left: 0;
+  }
+
+  10% {
+    left: 0;
+  }
+
+  15% {
+    left: -100%;
+  }
+
+  50% {
+    left: -100%;
+  }
+
+  55% {
+    left: -200%;
+  }
+
+  90% {
+    left: -200%;
+  }
+
+  95% {
+    left: 0;
+  }
+}
+
+@keyframes thing {
+  0% {
+    left: 0;
+  }
+
+  10% {
+    left: 0;
+  }
+
+  15% {
+    left: 41px;
+  }
+
+  50% {
+    left: 41px;
+  }
+
+  55% {
+    left: 82px;
+  }
+
+  90% {
+    left: 82px;
+  }
+
+  95% {
+    left: 0;
+  }
+}
+
+/* end testmonalis */
+section.contact {
+  display: flex;
+}
+
+.contact .box {
+  padding: 100px 0;
+  width: 50%;
+  overflow: hidden;
+}
+
+.contact .f {
+  padding-left: 100px;
+  overflow: hidden;
+  background-color: blue;
+  color: white;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.contact .box img {
+  height: 100%;
+}
+
+.contact .container input:not(:last-child) {
+  border: 0;
+  border-bottom: 2px solid white;
+  margin-bottom: 40px;
+  background-color: blue;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.contact .container input.massege {
+  margin-top: 50px;
+}
+
+.just {
+  background-image: url(../../tamplate2/images/landing.jpg);
+}
+
+.send_btn {
+  background: #fcc10e;
+  font-weight: 500;
+  font-size: 18px;
+  width: 185px;
+  color: #fff;
+  height: 56px;
+  margin-top: 50px;
+  transition: ease-in all 0.5s;
+  border-radius: 40px;
+}
+
+.send_btn:hover {
+  background: black;
+  cursor: pointer;
+}
+
+/* start footer  */
+footer {
+  padding: 100px 0;
+  background-color: #252525;
+}
+
+footer .box:last-child {
+  width: 100%;
+}
+
+footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+footer h1,
+footer i {
+  color: #fff;
+}
+
+footer p {
+  color: #fff;
+  font-size: 17px;
+  line-height: 28px;
+  text-align: left;
+  padding-right: 60px;
+  display: inline-block;
+}
+
+footer .container .box:not(:last-child) {
+  width: calc((100% - 60px) / 3);
+}
+
+footer ul a {
+  margin-top: 10px;
+  color: #fff7cb;
+  display: block;
+  transition: 0.3s;
+}
+
+footer ul a:hover {
+  color: white;
+}
+
+a.active {
+  color: #fcc10e;
+}
+
+footer .box div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+footer .box div {
+}
+
+footer i {
+  margin-right: 10px;
+}
+
+footer .container .Subscribe {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-size: 20px;
+  align-items: center;
+  position: relative;
+}
+
+footer .container .Subscribe form {
+  display: flex;
+  flex-basis: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+footer .container .Subscribe form .email {
+  width: 100%;
+  border-radius: 50px;
+  padding: 20px;
+}
+
+footer .container .Subscribe form .submit {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px 45px;
+  border-radius: 50px;
+  background-color: #f9bf16;
+  color: white;
+  border: 1px solid;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+footer .container .Subscribe form .submit:hover {
+  background: blue;
+}
+
+footer > p {
+  margin-top: 50px;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+footer > p span {
+  font-weight: bold;
+  color: gold;
+}
+
+/* end footer  */
